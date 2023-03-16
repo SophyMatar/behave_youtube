@@ -1,7 +1,4 @@
 Feature: Search for videos
-  As a user
-  I want to search for videos based on keywords
-  So that I can find the videos I am interested in
 
   Scenario: Search for a video using a keyword
     Given I am on the YouTube homepage
