@@ -2,11 +2,6 @@
 
 Sophia Matar
 
+Testing a website, using Gherkin Tests.
 
-Software Engineering 
-
-Dr. Delozier
-
-Testing a Website Homewrok
-
-Using Gherkin Tests, to assess a website(youtube.com)
+Testing youtube.com
