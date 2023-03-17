@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 @given('I am on the YouTube homepage')
@@ -23,3 +25,10 @@ def step_impl(context):
 def step_impl(context, search_term):
     search_result_heading = context.driver.find_element(By.TAG_NAME, "h1")
     assert search_term.lower() in search_result_heading.text.lower()
+
+@then('I should see a message indicating that there are no results for "{search_term}"')
+def step_impl(context, search_term):
+    wait = WebDriverWait(context.driver, 10)
+    no_results_message = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div#container yt-icon")))
+    assert f"No results found for {search_term}" in no_results_message.get_attribute("aria-label")
+
