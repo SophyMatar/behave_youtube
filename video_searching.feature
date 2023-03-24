@@ -1,19 +1,20 @@
-Feature: Search for videos
+ Feature: Search for videos
 
-  Scenario: Search for a video using a keyword
+ Scenario: Search for a video using a keyword
     Given that we have gone to wwww.youtube.com
-    When I enter "cat videos" into the search bar
+    When I enter "BTS music videos" into the search bar
     And I click the search button
-    Then I should see a list of videos related to "cat videos"
+    Then I should see a list of videos related to "BTS music videos"
     
   Scenario: Search for a video using a partial keyword
     Given that we have gone to wwww.youtube.com
-    When I enter "cooking" into the search bar
+    When I enter "music" into the search bar
     And I click the search button
-    Then I should see a list of videos related to "cooking"
+    Then I should see a list of videos related to "music"
     
   Scenario: Search for a video using a misspelled keyword
     Given that we have gone to wwww.youtube.com
-    When I enter "catt videos" into the search bar
+    When I enter "cobing videos" into the search bar
     And I click the search button
-    Then I should see a message indicating that there are no results for "catt videos"
+    Then I should see a message indicating that there are no results for "cobing videos"
+
