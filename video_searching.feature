@@ -1,3 +1,4 @@
+ 
  Feature: Search for videos
 
  Scenario: Search for a video using a keyword
