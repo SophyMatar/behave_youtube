@@ -5,10 +5,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-@given('I am on the YouTube homepage')
-def step_impl(context):
-    context.driver = webdriver.Chrome()
-    context.driver.get("https://www.youtube.com/")
+@given(u'that we have gone to {site}')
+def step_impl(context, site):
+    context.site = site
+    context.browser = webdriver.Chrome()
+    if not site.startswith("http"):
+        site = "https://" + site
+    context.browser.get(site)
+    time.sleep(5)
 
 @when('I enter "{search_term}" into the search bar')
 def step_impl(context, search_term):
